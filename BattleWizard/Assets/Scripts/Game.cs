@@ -14,6 +14,8 @@ public class Game : MonoBehaviour
     public GameObject manaPrefab;
     public GameObject starPrefab;
     public GameObject targetPrefab;
+    public GameObject skeletonPrefab;
+    public GameObject wizardPrefab;
     public ContactFilter2D contactFilter;
     
     private Mode mode = Mode.Move;
@@ -41,6 +43,13 @@ public class Game : MonoBehaviour
         fireballConstellation.Add(star3);
         fireballConstellation.Add(star4);
         fireballConstellation.Add(star5);
+
+        var wizardObject = Instantiate(wizardPrefab, new Vector3(0, -8, 0), this.transform.rotation);
+
+        for(var i=0; i<10; i++)
+        {
+            var skeletonObject = Instantiate(skeletonPrefab, new Vector3(Random.value, Random.value + 10, 0), this.transform.rotation);
+        }
     }
 
     // Update is called once per frame

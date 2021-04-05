@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Skeleton : MonoBehaviour
 {
-    public GameObject playerObject;
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +13,8 @@ public class Skeleton : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        var playerObject = GameObject.FindWithTag("Player");
+        Debug.Log(playerObject);
         if(playerObject != null)
         {
             // move towards the player
